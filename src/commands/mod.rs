@@ -1,4 +1,3 @@
-// src/commands/mod.rs
 pub mod init;
 pub mod index;
 pub mod find_file;

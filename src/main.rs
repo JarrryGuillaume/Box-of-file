@@ -25,7 +25,6 @@ fn main() {
                     Arg::new("file")
                         .help("The file to search for")
                         .required(true)
-                        // Replacing `takes_value(true)` with:
                         .num_args(1),
                 ),
         )
@@ -49,7 +48,7 @@ fn main() {
                         .long("address")
                         .help("Your email address (sender)")
                         .required(true)
-                        .num_args(1), // Clap 4 style
+                        .num_args(1), 
                 )
                 .arg(
                     Arg::new("password")
@@ -112,7 +111,6 @@ fn main() {
         Some(("findfile", sub_matches)) => {
             let file_path = sub_matches.get_one::<String>("file").unwrap();
 
-            // Compute the file's hash
             let file_hash = match find_file::compute_file_hash(Path::new(file_path)) {
                 Ok(hash) => hash,
                 Err(e) => {
@@ -121,7 +119,6 @@ fn main() {
                 }
             };
 
-            // Find directories where the file appears
             match find_file::find_file_directories(&file_hash) {
                 Ok(directories) => {
                     if directories.is_empty() {
@@ -157,7 +154,7 @@ fn main() {
                             for dir in entry.directories {
                                 println!("  - {}", dir);
                             }
-                            println!(""); // blank line
+                            println!(""); 
                         }
                     }
                 }

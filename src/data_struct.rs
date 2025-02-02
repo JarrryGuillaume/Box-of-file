@@ -1,4 +1,3 @@
-// src/dataStruct.rs
 use serde::{Deserialize, Serialize};
 
 #[derive(Debug, Serialize, Deserialize, Clone)]
@@ -14,7 +13,7 @@ pub struct FileMetadata {
 #[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct DirectoryMetadata {
     pub key: String,
-    pub entries: Vec<(String, String, String)>, // (KEY, KIND, NAME)
+    pub entries: Vec<(String, String, String)>, 
 }
 
 #[derive(Serialize, Deserialize, Debug)]

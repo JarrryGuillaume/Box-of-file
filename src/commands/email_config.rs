@@ -1,5 +1,3 @@
-// src/commands/config_email.rs
-
 use std::fs;
 use std::io::{self, Write};
 use serde::{Serialize, Deserialize};
@@ -7,9 +5,6 @@ use dirs::home_dir;
 use crate::data_struct::EmailConfig;
 use crate::commands::global::get_global_bof_dir;
 
-/// Save the user’s email credentials and server info in a JSON config file.
-/// Example path: ~/.bof_email_config.json
-// src/commands/config_email.rs
 
 pub fn config_email_command(
     address: &str,

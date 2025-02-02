@@ -15,7 +15,7 @@ def send_test_email(outlook_username, outlook_password, from_address, to_address
 
     context = ssl.create_default_context()
     with smtplib.SMTP(smtp_server, port) as server:
-        server.set_debuglevel(1)  # 1 = moderate debug output
+        server.set_debuglevel(1)  
         server.ehlo()
         server.starttls(context=context)
         server.ehlo()
